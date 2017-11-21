@@ -1,0 +1,9 @@
+*.log
+npm-debug.log*
+.idea/
+node_modules/
+jspm_packages/
+/public
+package-lock.json
+angular/package-lock.json
+angular/dist
