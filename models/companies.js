@@ -5,15 +5,15 @@ const Schema = mongoose.Schema;
 // Define schema
 const CompaniesSchema = mongoose.Schema({
     REGON: {
-        type: Number,
+        type: String,
         required: false
     },
     NIP: {
-        type: Number,
+        type: String,
         required: false
     },
     KRS: {
-        type: Number,
+        type: String,
         required: false
     },
     name: {
@@ -36,7 +36,7 @@ const CompaniesSchema = mongoose.Schema({
         type: String,
     },
     postal: {
-        type: Number,
+        type: String,
     }
 });
 
@@ -47,5 +47,5 @@ module.exports.getAll = function(callback){
 };
 
 module.exports.getByNumber = function(number, callback){
-    Companies.findOne({NIP:number}, callback);
+    Companies.find({}, callback);//NIP:number
 };
