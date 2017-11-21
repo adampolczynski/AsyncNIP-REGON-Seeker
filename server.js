@@ -33,7 +33,6 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
 app.use('/api/companies', companies);
 
 app.get('/', (req, res) => {

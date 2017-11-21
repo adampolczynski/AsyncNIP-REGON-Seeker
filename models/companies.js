@@ -47,5 +47,8 @@ module.exports.getAll = function(callback){
 };
 
 module.exports.getByNumber = function(number, callback){
-    Companies.find({}, callback);//NIP:number
+
+    // we have to look for NIP, REGON and KRS number so doing filtering here
+
+    Companies.findOne({NIP:number}, callback);//NIP:number
 };

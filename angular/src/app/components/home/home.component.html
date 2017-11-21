@@ -1,0 +1,49 @@
+
+<div class="container">
+
+  <div class="container m-b-l">
+    <form [formGroup]="searchForm" class="m-t-l " (submit)="onSearchSubmit()">
+      <label class="sr-only" for="search">NIP/REGON/KRS</label>
+      <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+        <!-- [(ngModel)]="number" -->
+        <input formControlName="search" name="number" type="text" class="form-control" id="search" placeholder="NIP/REGON/KRS">
+        <button class="btn btn-secondary" type="submit">Search</button>
+      </div>
+    </form>
+
+  </div>
+  <div *ngIf="alert != ''" [innerHTML]="alert">
+
+  </div>
+
+  <hr>
+  <div class="container">
+    Company details:
+    <form class="form-group m-t-m">
+      <label for="name">Name</label>
+      <input [(ngModel)]="foundCompany.name" name="name" type="text" class="form-control" id="name">
+      <div class="form-group row m-t-s">
+        <div class="col-6">
+          <label for="province">Province</label>
+          <input [(ngModel)]="foundCompany.province" name="province" type="text" class="form-control" id="province">
+        </div>
+        <div class="col-6">
+          <label for="county">County</label>
+          <input [(ngModel)]="foundCompany.county" name="county" type="text" class="form-control" id="county">
+        </div>
+      </div>
+      <label for="street">Street</label>
+      <input [(ngModel)]="foundCompany.street" name="street" type="text" class="form-control" id="street">
+      <div class="form-group row m-t-s">
+        <div class="col-6">
+          <label for="city">City</label>
+          <input [(ngModel)]="foundCompany.city" name="city" type="text" class="form-control" id="city">
+        </div>
+        <div class="col-6">
+          <label for="postal">Postal</label>
+          <input [(ngModel)]="foundCompany.postal" name="postal" type="text" class="form-control" id="postal">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
