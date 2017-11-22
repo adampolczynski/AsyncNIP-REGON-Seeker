@@ -1,10 +1,10 @@
 <div class="container" style="background-color: whitesmoke">
   <div class="container m-b-l">
-    <h4>Examples: <strong class="text-success"> NIP 0000000000, KRS 0123456789, REGON 092312345</strong></h4>
+    <h4>Examples: <strong class="text-success"> NIP PL000-000-00-00, KRS 0123456789, REGON 092312345</strong></h4>
     <form [formGroup]="searchForm" class="m-t-l " (submit)="onSearchSubmit()">
       <label class="sr-only" for="search">NIP/REGON/KRS</label>
       <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-        <input autocomplete="false" formControlName="search" name="number" type="text" class="form-control" id="search" placeholder="NIP/REGON/KRS">
+        <input autocomplete="off" formControlName="search" name="number" type="text" class="form-control" id="search" placeholder="NIP/REGON/KRS">
         <button class="btn btn-secondary" type="submit">Search</button>
       </div>
     </form>
