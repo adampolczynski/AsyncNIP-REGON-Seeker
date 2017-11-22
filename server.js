@@ -43,10 +43,10 @@ app.get('/', (req, res) => {
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
+const port = process.env.PORT || 8080;
 
-const server = app.listen(8080, function() {
+const server = app.listen(port, function() {
     const host = 'localhost';
-    const port = server.address().port;
     console.log('App listening at http://%s:%s', host, port);
 });
 
