@@ -32,6 +32,6 @@ export class SearchService {
   }
 
   prepEndpoint(ep){
-      return 'http://localhost:8080/'+ep; // for heroku http://numberseeker.herokuapp.com/
+      return 'http://numberseeker.herokuapp.com/'+ep; // for heroku http://numberseeker.herokuapp.com/
   }
 }
