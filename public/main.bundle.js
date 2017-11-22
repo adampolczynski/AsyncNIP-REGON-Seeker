@@ -327,7 +327,7 @@ var SearchService = /** @class */ (function () {
             .map(function (res) { return res.json(); });
     };
     SearchService.prototype.prepEndpoint = function (ep) {
-        return 'http://localhost:8080/' + ep;
+        return 'http://numberseeker.herokuapp.com/' + ep;
     };
     SearchService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
