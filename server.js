@@ -36,6 +36,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/requests', requests);
 app.use('/api/companies', companies);
 
+app.use((req, res, next) => { // cors for express js
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 app.get('/', (req, res) => {
     res.send('Invalid Endpoint');
 });
