@@ -19,7 +19,7 @@ mongoose.connection.on('error', (err) => {
     console.log('Database error: '+err);
 });
 
-const index = require('./routes/index');
+const requests = require('./routes/requests');
 const companies = require('./routes/companies');
 
 const app = express();
@@ -33,6 +33,7 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/api/requests', requests);
 app.use('/api/companies', companies);
 
 app.get('/', (req, res) => {

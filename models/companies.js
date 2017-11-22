@@ -6,15 +6,12 @@ const Schema = mongoose.Schema;
 const CompaniesSchema = mongoose.Schema({
     REGON: {
         type: String,
-        required: false
     },
     NIP: {
         type: String,
-        required: false
     },
     KRS: {
         type: String,
-        required: false
     },
     name: {
         type: String,
@@ -24,7 +21,6 @@ const CompaniesSchema = mongoose.Schema({
     },
     county: {
         type: String, // powiat
-        required: false,
     },
     commune: {
         type: String, // gmina
@@ -47,8 +43,6 @@ module.exports.getAll = function(callback){
 };
 
 module.exports.getByNumber = function(number, callback){
-
-    // we have to look for NIP, REGON and KRS number so doing filtering here
-
-    Companies.findOne({NIP:number}, callback);//NIP:number
+    // we have to look for NIP, REGON and KRS
+    Companies.findOne({$or:[{NIP:number},{REGON:number},{KRS:number}]}, callback);//NIP:number
 };

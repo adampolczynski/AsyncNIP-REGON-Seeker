@@ -22,6 +22,15 @@ export class SearchService {
       .map(res => res.json());
   }
 
+  // function that creates request in db
+  saveRequest(number) {
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    let ep = this.prepEndpoint('api/requests/addRequest');
+    return this.http.post(ep,number,{headers: headers})
+      .map(res => res.json());
+  }
+
   prepEndpoint(ep){
       return 'http://localhost:8080/'+ep;
   }

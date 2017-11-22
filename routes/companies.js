@@ -4,7 +4,7 @@ const config = require('../config/database');
 const Companies = require('../models/companies');
 
 /* GET All */
-router.get('/getAll', function(req, res, next) {
+router.get('/getAll', (req, res, next) => {
     Companies.getAll((err, companies) => {
         if (err) {
             res.json({success: false});

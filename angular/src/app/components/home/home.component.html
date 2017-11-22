@@ -1,24 +1,19 @@
-
-<div class="container">
-
+<div class="container" style="background-color: whitesmoke">
   <div class="container m-b-l">
+    <h4>Examples: <strong class="text-success"> NIP 0000000000, KRS 0123456789, REGON 092312345</strong></h4>
     <form [formGroup]="searchForm" class="m-t-l " (submit)="onSearchSubmit()">
       <label class="sr-only" for="search">NIP/REGON/KRS</label>
       <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-        <!-- [(ngModel)]="number" -->
-        <input formControlName="search" name="number" type="text" class="form-control" id="search" placeholder="NIP/REGON/KRS">
+        <input autocomplete="false" formControlName="search" name="number" type="text" class="form-control" id="search" placeholder="NIP/REGON/KRS">
         <button class="btn btn-secondary" type="submit">Search</button>
       </div>
     </form>
-
   </div>
   <div *ngIf="alert != ''" [innerHTML]="alert">
-
   </div>
-
   <hr>
-  <div class="container">
-    Company details:
+  <div class="container m-b-l">
+    <h4 *ngIf="foundCompany.name != '';">Company found:</h4>
     <form class="form-group m-t-m">
       <label for="name">Name</label>
       <input [(ngModel)]="foundCompany.name" name="name" type="text" class="form-control" id="name">
