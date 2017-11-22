@@ -22,6 +22,6 @@ module.exports.getAll = function(callback){
 };
 
 module.exports.addRequest = function(askedNumber, callback){
-    let request = new Request({asked:askedNumber});
+    let request = new Request({asked:askedNumber, headers:'headers here'});
     request.save(callback);
 };
